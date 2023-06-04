@@ -565,8 +565,8 @@ namespace SonicRetro.SonLVL.API
 		{
 			ushort val = ByteConverter.ToUInt16(file, address);
 			_so1 = (byte)((val >> 13) & 0x3);
-			YFlip = (val & 0x1000) == 0x1000;
-			XFlip = (val & 0x800) == 0x800;
+			YFlip = (val & 0x800) == 0x800;
+			XFlip = (val & 0x400) == 0x400;
 			_ind = (ushort)(val & 0x3FF);
 		}
 
@@ -574,7 +574,7 @@ namespace SonicRetro.SonLVL.API
 		{
 			ushort val = _ind;
 			if (XFlip) val |= 0x800;
-			if (YFlip) val |= 0x1000;
+			if (YFlip) val |= 0x400;
 			val |= (ushort)(_so1 << 13);
 			return ByteConverter.GetBytes(val);
 		}
