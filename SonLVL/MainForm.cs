@@ -55,12 +55,12 @@ namespace SonicRetro.SonLVL.GUI
 			if (invertColorsToolStripMenuItem.Checked)
 				for (int i = 0; i < 256; i++)
 					LevelImgPalette.Entries[i] = LevelImgPalette.Entries[i].Invert();
-			LevelImgPalette.Entries[LevelData.ColorWhite] = Color.White;
-			LevelImgPalette.Entries[LevelData.ColorYellow] = Color.Yellow;
-			LevelImgPalette.Entries[LevelData.ColorBlack] = Color.Black;
-			LevelImgPalette.Entries[LevelData.ColorWhite | 0x80] = Color.White;
-			LevelImgPalette.Entries[LevelData.ColorYellow | 0x80] = Color.Yellow;
-			LevelImgPalette.Entries[LevelData.ColorBlack | 0x80] = Color.Black;
+			LevelImgPalette.Entries[LevelData.ColorWhite] = Color.Red;
+			LevelImgPalette.Entries[LevelData.ColorYellow] = Color.Blue;
+			LevelImgPalette.Entries[LevelData.ColorBlack] = Color.Green;
+			LevelImgPalette.Entries[LevelData.ColorWhite | 0x80] = Color.Red;
+			LevelImgPalette.Entries[LevelData.ColorYellow | 0x80] = Color.Blue;
+			LevelImgPalette.Entries[LevelData.ColorBlack | 0x80] = Color.Green;
 			LevelImgPalette.Entries[ColorGrid] = Settings.GridColor;
 			ChunkSelector.Invalidate();
 			DrawChunkPicture();
@@ -581,9 +581,9 @@ namespace SonicRetro.SonLVL.GUI
 			LevelImgPalette = new Bitmap(1, 1, PixelFormat.Format8bppIndexed).Palette;
 			LevelData.BmpPal.Entries.CopyTo(LevelImgPalette.Entries, 0);
 			LevelImgPalette.Entries[LevelData.ColorTransparent] = LevelData.PaletteToColor(2, 0, false);
-			LevelImgPalette.Entries[LevelData.ColorWhite] = Color.White;
-			LevelImgPalette.Entries[LevelData.ColorYellow] = Color.Yellow;
-			LevelImgPalette.Entries[LevelData.ColorBlack] = Color.Black;
+			LevelImgPalette.Entries[LevelData.ColorWhite] = Color.Red;
+			LevelImgPalette.Entries[LevelData.ColorYellow] = Color.Blue;
+			LevelImgPalette.Entries[LevelData.ColorBlack] = Color.Green;
 			LevelImgPalette.Entries[ColorGrid] = Settings.GridColor;
 			curpal = new Color[16];
 			switch (LevelData.Level.ChunkFormat)
@@ -775,9 +775,9 @@ namespace SonicRetro.SonLVL.GUI
 					LevelImgPalette.Entries[128] = LevelData.Palette[LevelData.WaterPalette][2, 0].RGBColor;
 					for (int i = 129; i < 192; i++)
 						LevelImgPalette.Entries[i] = LevelData.Palette[LevelData.WaterPalette][(i - 128) / 16, i % 16].RGBColor;
-					LevelImgPalette.Entries[LevelData.ColorWhite | 0x80] = Color.White;
-					LevelImgPalette.Entries[LevelData.ColorYellow | 0x80] = Color.Yellow;
-					LevelImgPalette.Entries[LevelData.ColorBlack | 0x80] = Color.Black;
+					LevelImgPalette.Entries[LevelData.ColorWhite | 0x80] = Color.Red;
+					LevelImgPalette.Entries[LevelData.ColorYellow | 0x80] = Color.Blue;
+					LevelImgPalette.Entries[LevelData.ColorBlack | 0x80] = Color.Green;
 				}
 			}
 			else
