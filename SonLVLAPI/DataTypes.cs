@@ -612,13 +612,13 @@ namespace SonicRetro.SonLVL.API
 			Blocks = new ChunkBlock[width, height];
 			switch (LevelData.Level.ChunkFormat)
 			{
-				case EngineVersion.S1:
 				case EngineVersion.SCD:
 				case EngineVersion.SCDPC:
 					for (int y = 0; y < height; y++)
 						for (int x = 0; x < width; x++)
 							Blocks[x, y] = new S1ChunkBlock();
 					break;
+				case EngineVersion.S1:
 				case EngineVersion.S2:
 				case EngineVersion.S2NA:
 				case EngineVersion.S3K:
@@ -637,13 +637,13 @@ namespace SonicRetro.SonLVL.API
 			Blocks = new ChunkBlock[width, height];
 			switch (LevelData.Level.ChunkFormat)
 			{
-				case EngineVersion.S1:
 				case EngineVersion.SCD:
 				case EngineVersion.SCDPC:
 					for (int y = 0; y < height; y++)
 						for (int x = 0; x < width; x++)
 							Blocks[x, y] = new S1ChunkBlock(file, address + ((x + (y * width)) * ChunkBlock.Size));
 					break;
+				case EngineVersion.S1:
 				case EngineVersion.S2:
 				case EngineVersion.S2NA:
 				case EngineVersion.S3K:
